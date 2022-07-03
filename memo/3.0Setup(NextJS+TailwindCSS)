@@ -1,0 +1,37 @@
+> npx create-next-app@latest --typescript
+> cd <project name>
+> git rm .git
+> git init
+> git remote add origin <github url>
+
+*VSCode extension 설치 +Tailwind CSS IntelliSense
+
+> npm install -D tailwindcss postcss autoprefixer
+> npx tailwindcss init -p
+
++tailwind.config.js 수정(tailwind가 들여다봐야할 파일확장자)
+    module.exports = {
+    content: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.tsx"],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+    };
+
++globals.css
+*styles/globals.css 전체내용 삭제 후 아래 내용 입력
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+---> 여기까지 하면 tailwind 사용 가능해짐
++ pages/index.tsx 에 tailwindCSS 적용(className속성) 
+const Home: NextPage = () => {
+  return (
+    <div className="bg-red-500">
+      <h1 className="text-gray-400">It works!!!</h1>
+    </div>
+  );
+};
+
+>npm run dev (브라우저창에서 확인)

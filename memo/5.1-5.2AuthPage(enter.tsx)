@@ -1,0 +1,27 @@
+input 필드를 꾸미기 위한 plugin 설치(input에 reset lasyer를 추가할 수 있음)
+>npm i @tailwindcss/forms
++tailwind.config.js 수정
+plugins: [require("@tailwindcss/forms")]
+
+<phone number field>
+            {method === "phone" ? (
+              <div className="flex rounded-md shadow-sm">
+                <span className="flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-sm text-gray-500 select-none">
+                  +82
+                </span>
+                <input
+                  type="number"
+                  className="rounded-l-none appearance-none w-full px-3 border-gray-300 rounded-md shadow-sm plasceholder-gray-400 focus:outline-none  focus:border-orange-500 focus:ring-orange-500"
+                  required
+                />
+              </div>
+            ) : null}
+
+<absolute / relative> Or enter with
+          <div>
+            <div className=" absolute w-full border-t border-gray-300" />
+            <div className="relative text-center -top-3">
+              <span className="bg-white px-2">Or enter with</span>
+            </div>
+          </div>
+
